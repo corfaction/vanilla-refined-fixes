@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "vanilla-refined-fixes",
+	"version": "${version}",
+	"name": "Vanilla Refined: Fixes",
+	"description": "Refining vanilla Minecraft by fixing bugs, improving mechanics, and adding missing functionality while staying true to the vanilla experience.",
+	"authors": [
+		"corfaction"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/vanilla-refined-fixes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.corfaction.vanillarefined.fixes.VanillaRefinedFixes"
+		],
+		"client": [
+			"net.corfaction.vanillarefined.fixes.client.VanillaRefinedFixesClient"
+		],
+		"fabric-datagen": [
+			"net.corfaction.vanillarefined.fixes.client.VanillaRefinedFixesDataGenerator"
+		]
+	},
+	"mixins": [
+		"vanilla-refined-fixes.mixins.json",
+		{
+			"config": "vanilla-refined-fixes.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
