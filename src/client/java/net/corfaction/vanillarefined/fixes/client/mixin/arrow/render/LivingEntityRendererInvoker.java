@@ -1,0 +1,17 @@
+package net.corfaction.vanillarefined.fixes.client.mixin.arrow.render;
+
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.gen.Invoker;
+
+@Mixin(LivingEntityRenderer.class)
+public interface LivingEntityRendererInvoker<
+        S extends LivingEntityRenderState,
+        M extends EntityModel<? super S>> {
+
+    @Invoker("addLayer")
+    boolean arrows_fix$addLayer(RenderLayer<S, M> layer);
+}

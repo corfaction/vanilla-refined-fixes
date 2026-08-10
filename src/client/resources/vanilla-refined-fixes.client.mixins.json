@@ -1,12 +1,21 @@
 {
-	"required": true,
-	"package": "net.corfaction.vanillarefined.fixes.client.mixin",
-	"compatibilityLevel": "JAVA_25",
-	"client": [],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	}
+  "required": true,
+  "package": "net.corfaction.vanillarefined.fixes.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "arrow.render.MobRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "mixins": [
+    "arrow.accessor.ModelPartAccessor",
+    "arrow.model.ModelMixin",
+    "arrow.render.LivingEntityRendererInvoker",
+    "arrow.render.LivingEntityRendererMixin",
+    "arrow.render.LivingEntityRenderStateMixin"
+  ]
 }
