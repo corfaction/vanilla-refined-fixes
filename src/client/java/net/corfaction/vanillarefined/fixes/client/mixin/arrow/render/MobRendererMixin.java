@@ -20,14 +20,14 @@ public abstract class MobRendererMixin<T extends Mob, S extends LivingEntityRend
 
     @SuppressWarnings({"unchecked"})
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void arrows_fix$addArrowLayer(
+    private void vanilla_refined_fixes$addArrowLayer(
             EntityRendererProvider.Context context,
             M model,
             float shadow,
             CallbackInfo ci
     ) {
         ((LivingEntityRendererInvoker<S, M>) this)
-                .arrows_fix$addLayer(
+                .vanilla_refined_fixes$addLayer(
                         new LivingEntityArrowLayer<>(
                                 (LivingEntityRenderer<T, S, M>) (Object) this,
                                 context

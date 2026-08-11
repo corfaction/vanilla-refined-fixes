@@ -34,6 +34,6 @@ public class LivingEntityArrowLayer<
     @Override
     protected int numStuck(S state) {
         return ((LivingEntityRenderStateData) state)
-                .arrows_fix$getArrowCount();
+                .vanilla_refined_fixes$getArrowCount();
     }
 }

@@ -8,28 +8,28 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(LivingEntityRenderState.class)
 public class LivingEntityRenderStateMixin implements LivingEntityRenderStateData {
     @Unique
-    public int arrowsFixArrowCount;
+    public int vanilla_refined_fixes$arrowCount;
 
     @Unique
-    public int arrowsFixId;
+    public int vanilla_refined_fixes$id;
 
     @Override
-    public int arrows_fix$getId() {
-        return arrowsFixId;
+    public int vanilla_refined_fixes$getId() {
+        return vanilla_refined_fixes$id;
     }
 
     @Override
-    public int arrows_fix$getArrowCount() {
-        return arrowsFixArrowCount;
+    public int vanilla_refined_fixes$getArrowCount() {
+        return vanilla_refined_fixes$arrowCount;
     }
 
     @Override
-    public void arrows_fix$setId(int id) {
-        this.arrowsFixId = id;
+    public void vanilla_refined_fixes$setId(int id) {
+        this.vanilla_refined_fixes$id = id;
     }
 
     @Override
-    public void arrows_fix$setArrowCount(int arrowCount) {
-        this.arrowsFixArrowCount = arrowCount;
+    public void vanilla_refined_fixes$setArrowCount(int arrowCount) {
+        this.vanilla_refined_fixes$arrowCount = arrowCount;
     }
 }

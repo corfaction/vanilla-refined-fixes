@@ -13,5 +13,5 @@ public interface LivingEntityRendererInvoker<
         M extends EntityModel<? super S>> {
 
     @Invoker("addLayer")
-    boolean arrows_fix$addLayer(RenderLayer<S, M> layer);
+    boolean vanilla_refined_fixes$addLayer(RenderLayer<S, M> layer);
 }

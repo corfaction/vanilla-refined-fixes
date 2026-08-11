@@ -18,7 +18,7 @@ public class LivingEntityMixin {
             at = @At("HEAD"),
             cancellable = true
     )
-    private void cancelSlimeFallDamage(
+    private void vanilla_refined_fixes$cancelSlimeFallDamage(
             double fallDistance, float damageModifier, DamageSource damageSource, CallbackInfoReturnable<Boolean> cir
     ) {
         if ((Object) this instanceof Slime) {
@@ -31,7 +31,7 @@ public class LivingEntityMixin {
             at = @At("HEAD"),
             cancellable = true
     )
-    public void bounceOffSlime(final Entity entity, CallbackInfo ci) {
+    public void vanilla_refined_fixes$bounceOffSlime(final Entity entity, CallbackInfo ci) {
 
         if ((Object) this instanceof Slime) {
 

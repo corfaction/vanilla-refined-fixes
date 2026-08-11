@@ -13,8 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class LivingEntityRendererMixin<T extends LivingEntity, S extends LivingEntityRenderState> {
 
     @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V", at = @At("HEAD"))
-    private void onExtractRenderState(T entity, S state, float partialTicks, CallbackInfo ci) {
-        ((LivingEntityRenderStateData)state).arrows_fix$setArrowCount(entity.getArrowCount());
-        ((LivingEntityRenderStateData)state).arrows_fix$setId(entity.getId());
+    private void vanilla_refined_fixes$onExtractRenderState(T entity, S state, float partialTicks, CallbackInfo ci) {
+        ((LivingEntityRenderStateData)state).vanilla_refined_fixes$setArrowCount(entity.getArrowCount());
+        ((LivingEntityRenderStateData)state).vanilla_refined_fixes$setId(entity.getId());
     }
 }

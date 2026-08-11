@@ -1,4 +1,4 @@
-package net.corfaction.vanillarefined.fixes.client.mixin.arrow.accessor;
+package net.corfaction.vanillarefined.fixes.client.mixin.arrow;
 
 import net.minecraft.client.model.geom.ModelPart;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,6 +10,6 @@ import java.util.Map;
 public interface ModelPartAccessor {
 
     @Accessor("children")
-    Map<String, ModelPart> arrows_fix$getChildren();
+    Map<String, ModelPart> vanilla_refined_fixes$getChildren();
 
 }

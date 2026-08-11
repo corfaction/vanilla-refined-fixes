@@ -12,8 +12,8 @@
     "requireAnnotations": true
   },
   "mixins": [
-    "arrow.accessor.ModelPartAccessor",
-    "arrow.model.ModelMixin",
+    "arrow.ModelPartAccessor",
+    "arrow.ModelMixin",
     "arrow.render.LivingEntityRendererInvoker",
     "arrow.render.LivingEntityRendererMixin",
     "arrow.render.LivingEntityRenderStateMixin"

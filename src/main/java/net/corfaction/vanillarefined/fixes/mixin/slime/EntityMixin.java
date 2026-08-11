@@ -16,9 +16,9 @@ public class EntityMixin {
                     target = "Lnet/minecraft/world/entity/Entity;setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V"
             )
     )
-    private void slimeBounce(
+    private void vanilla_refined_fixes$slimeBounce(
             Entity entity,
-            Vec3 movement
+            Vec3 deltaMovement
     ) {
         if (entity instanceof Slime slime
                 && slime.verticalCollisionBelow) {
@@ -30,14 +30,14 @@ public class EntityMixin {
                 double bounceVelocity = -currentMovement.y;
 
                 entity.setDeltaMovement(
-                        movement.x,
+                        deltaMovement.x,
                         bounceVelocity,
-                        movement.z
+                        deltaMovement.z
                 );
                 return;
             }
         }
 
-        entity.setDeltaMovement(movement);
+        entity.setDeltaMovement(deltaMovement);
     }
 }

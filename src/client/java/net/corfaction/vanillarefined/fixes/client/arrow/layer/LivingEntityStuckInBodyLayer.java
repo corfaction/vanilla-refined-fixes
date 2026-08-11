@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.corfaction.vanillarefined.fixes.client.arrow.api.LivingEntityRenderStateData;
 import net.corfaction.vanillarefined.fixes.client.arrow.api.RootModelProvider;
-import net.corfaction.vanillarefined.fixes.client.mixin.arrow.accessor.ModelPartAccessor;
+import net.corfaction.vanillarefined.fixes.client.mixin.arrow.ModelPartAccessor;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.model.EntityModel;
@@ -75,7 +75,7 @@ public abstract class LivingEntityStuckInBodyLayer<R extends LivingEntityRenderS
     ) {
         int count = this.numStuck(state);
         if (count > 0) {
-            RandomSource random = RandomSource.createThreadLocalInstance(((LivingEntityRenderStateData)state).arrows_fix$getId());
+            RandomSource random = RandomSource.createThreadLocalInstance(((LivingEntityRenderStateData)state).vanilla_refined_fixes$getId());
 
             for (int i = 0; i < count; i++) {
                 poseStack.pushPose();
@@ -85,8 +85,8 @@ public abstract class LivingEntityStuckInBodyLayer<R extends LivingEntityRenderS
                     break;
                 }
 
-                ModelPart modelPart = arrows_fix$getRandomBodyPart(
-                        getDirectChildren(provider.arrows_fix$getRoot()),
+                ModelPart modelPart = getRandomBodyPart(
+                        getDirectChildren(provider.vanilla_refined_fixes$getRoot()),
                         random
                 );
 
@@ -142,14 +142,14 @@ public abstract class LivingEntityStuckInBodyLayer<R extends LivingEntityRenderS
         }
     }
 
-    public static ModelPart arrows_fix$getRandomBodyPart(final List<ModelPart> parts, final RandomSource random) {
+    public static ModelPart getRandomBodyPart(final List<ModelPart> parts, final RandomSource random) {
         return Util.getRandom(parts, random);
     }
 
     public static List<ModelPart> getDirectChildren(ModelPart root) {
         return new ArrayList<>(
                 ((ModelPartAccessor)(Object)root)
-                        .arrows_fix$getChildren()
+                        .vanilla_refined_fixes$getChildren()
                         .values()
         );
     }

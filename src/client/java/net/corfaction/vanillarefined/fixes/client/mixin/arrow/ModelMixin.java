@@ -1,4 +1,4 @@
-package net.corfaction.vanillarefined.fixes.client.mixin.arrow.model;
+package net.corfaction.vanillarefined.fixes.client.mixin.arrow;
 
 import net.corfaction.vanillarefined.fixes.client.arrow.api.RootModelProvider;
 import net.minecraft.client.model.Model;
@@ -13,7 +13,7 @@ public abstract class ModelMixin implements RootModelProvider {
     public abstract ModelPart root();
 
     @Override
-    public ModelPart arrows_fix$getRoot() {
+    public ModelPart vanilla_refined_fixes$getRoot() {
         return this.root();
     }
 }

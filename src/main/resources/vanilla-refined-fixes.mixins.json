@@ -3,7 +3,7 @@
   "package": "net.corfaction.vanillarefined.fixes.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "arrow.entity.AbstractArrowMixin",
+    "arrow.AbstractArrowMixin",
     "slime.EntityMixin",
     "slime.LivingEntityMixin"
   ],

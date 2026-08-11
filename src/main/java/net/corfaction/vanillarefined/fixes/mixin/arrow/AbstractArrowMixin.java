@@ -1,7 +1,7 @@
-package net.corfaction.vanillarefined.fixes.mixin.arrow.entity;
+package net.corfaction.vanillarefined.fixes.mixin.arrow;
 
-import net.corfaction.vanillarefined.fixes.mixin.arrow.accessor.EntityAccessor;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.level.block.BaseFireBlock;
 import net.minecraft.world.level.block.CampfireBlock;
@@ -19,15 +19,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class AbstractArrowMixin {
 
     @Inject(method = "onHitBlock", at = @At("TAIL"))
-    private void arrows_fix$onHitBlock(final BlockHitResult hitResult, final CallbackInfo ci) {
+    private void vanilla_refined_fixes$onHitBlock(final BlockHitResult hitResult, final CallbackInfo ci) {
 
         AbstractArrow arrow = (AbstractArrow) (Object) this;
 
-        if (!((EntityAccessor) this).arrows_fix$invokeIsOnFire()) {
+        if (!arrow.isOnFire()) {
             return;
         }
 
-        if (!(arrow.level() instanceof net.minecraft.server.level.ServerLevel level)) {
+        if (!(arrow.level() instanceof ServerLevel level)) {
             return;
         }
 
