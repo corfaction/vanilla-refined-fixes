@@ -25,7 +25,6 @@ public class EntityMixin {
 
             Vec3 currentMovement = slime.getDeltaMovement();
 
-            // Должны реально падать
             if (currentMovement.y < -0.08) {
                 double bounceVelocity = -currentMovement.y;
 

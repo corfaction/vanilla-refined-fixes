@@ -19,9 +19,9 @@ public class GhastRendererMixin {
     private float previousScale = 1.0f;
 
     @Unique
-    private static final float TARGET_SCALE = 1.2f; // максимальный размер при зарядке
+    private static final float TARGET_SCALE = 1.2f;
     @Unique
-    private static final float ANIMATION_SPEED = 0.005f; // скорость анимации
+    private static final float ANIMATION_SPEED = 0.005f;
 
     @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/monster/Ghast;Lnet/minecraft/client/renderer/entity/state/GhastRenderState;F)V",
             at = @At("TAIL"))
@@ -34,7 +34,6 @@ public class GhastRendererMixin {
             currentScale = Math.max(currentScale - ANIMATION_SPEED, 1.0f);
         }
 
-        // Плавная интерполяция с учётом partialTicks
         float interpolatedScale = previousScale + (currentScale - previousScale) * partialTicks;
         state.scale *= interpolatedScale;
     }
