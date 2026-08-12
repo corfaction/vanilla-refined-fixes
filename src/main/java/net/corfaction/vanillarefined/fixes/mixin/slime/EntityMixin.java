@@ -20,17 +20,14 @@ public class EntityMixin {
             Entity entity,
             Vec3 deltaMovement
     ) {
-        if (entity instanceof Slime slime
-                && slime.verticalCollisionBelow) {
+        if (entity instanceof Slime slime) {
 
             Vec3 currentMovement = slime.getDeltaMovement();
 
-            if (currentMovement.y < -0.08) {
-                double bounceVelocity = -currentMovement.y;
-
+            if (currentMovement.y < -0.5) {
                 entity.setDeltaMovement(
                         deltaMovement.x,
-                        bounceVelocity,
+                        -currentMovement.y,
                         deltaMovement.z
                 );
                 return;

@@ -37,7 +37,7 @@ public class LivingEntityMixin {
 
             Vec3 velocity = entity.getDeltaMovement();
 
-            if (velocity.y < 0) {
+            if (velocity.y < -0.5) {
 
                 entity.setDeltaMovement(
                         velocity.x,
